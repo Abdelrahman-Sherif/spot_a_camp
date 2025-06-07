@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:spot_a_camp/core/barrel.dart';
 import 'package:spot_a_camp/features/welcome/barrel.dart';
+import 'package:spot_a_camp/gen/assets.gen.dart';
 
 class WelcomePage extends StatelessWidget {
   const WelcomePage({super.key});
@@ -20,26 +21,7 @@ class WelcomePage extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     // App Logo/Icon
-                    Container(
-                      width: 120,
-                      height: 120,
-                      decoration: BoxDecoration(
-                        gradient: LinearGradient(
-                          colors: [
-                            AppTheme.primaryGreen,
-                            AppTheme.primaryGreenLight,
-                          ],
-                          begin: Alignment.topLeft,
-                          end: Alignment.bottomRight,
-                        ),
-                        borderRadius: BorderRadius.circular(30),
-                      ),
-                      child: const Icon(
-                        Icons.outdoor_grill_rounded,
-                        size: 60,
-                        color: Colors.white,
-                      ),
-                    ),
+                    Assets.svg.camping.svg(width: 120, height: 120),
                     const SizedBox(height: Spacing.l),
 
                     // Welcome Text
