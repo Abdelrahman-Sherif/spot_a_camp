@@ -1,3 +1,12 @@
 {
-  "welcome": "Welcome"
+  "welcome": "Welcome",
+  "welcomeTitle": "Find Your Perfect Campsite",
+  "welcomeSubtitle": "Discover unique camping spots from local hosts and create unforgettable outdoor experiences.",
+  "discoverCampsitesTitle": "Discover Campsites",
+  "discoverCampsitesSubtitle": "Browse through hundreds of unique camping locations",
+  "filterAndSearchTitle": "Filter & Search",
+  "filterAndSearchSubtitle": "Find the perfect spot with advanced filtering options",
+  "mapViewTitle": "Map View",
+  "mapViewSubtitle": "Explore camping spots on an interactive map",
+  "getStarted": "Start Exploring"
 }

@@ -4,11 +4,13 @@ import 'package:flutter/material.dart';
 class Spacing {
   Spacing._();
 
+  static const double xxs = 2;
+  static const double xs = 4;
   static const double small1 = 5;
   static const double small2 = 10;
-  static const double small3 = 15;
+  static const double small3 = 16;
   static const double small4 = 20;
-  static const double m = 30;
+  static const double m = 32;
   static const double l = 40;
   static const double xl = 50;
 
