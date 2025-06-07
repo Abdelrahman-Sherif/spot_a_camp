@@ -99,6 +99,60 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Welcome'**
   String get welcome;
+
+  /// No description provided for @welcomeTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Find Your Perfect Campsite'**
+  String get welcomeTitle;
+
+  /// No description provided for @welcomeSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Discover unique camping spots from local hosts and create unforgettable outdoor experiences.'**
+  String get welcomeSubtitle;
+
+  /// No description provided for @discoverCampsitesTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Discover Campsites'**
+  String get discoverCampsitesTitle;
+
+  /// No description provided for @discoverCampsitesSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Browse through hundreds of unique camping locations'**
+  String get discoverCampsitesSubtitle;
+
+  /// No description provided for @filterAndSearchTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Filter & Search'**
+  String get filterAndSearchTitle;
+
+  /// No description provided for @filterAndSearchSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Find the perfect spot with advanced filtering options'**
+  String get filterAndSearchSubtitle;
+
+  /// No description provided for @mapViewTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Map View'**
+  String get mapViewTitle;
+
+  /// No description provided for @mapViewSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Explore camping spots on an interactive map'**
+  String get mapViewSubtitle;
+
+  /// No description provided for @getStarted.
+  ///
+  /// In en, this message translates to:
+  /// **'Start Exploring'**
+  String get getStarted;
 }
 
 class _AppLocalizationsDelegate
