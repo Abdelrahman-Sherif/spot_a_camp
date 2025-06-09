@@ -9,5 +9,17 @@ final router = GoRouter(
       path: '/browse',
       builder: (context, state) => const BrowseCampsitesPage(),
     ),
+    GoRoute(
+      path: '/campsite/:id',
+      builder: (context, state) {
+        final campsite = state.extra as Campsite?;
+        if (campsite != null) {
+          return CampsiteDetailPage(campsite: campsite);
+        }
+
+        // Fallback
+        return const BrowseCampsitesPage();
+      },
+    ),
   ],
 );

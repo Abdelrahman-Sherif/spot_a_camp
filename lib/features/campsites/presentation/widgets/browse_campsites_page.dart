@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:pointer_interceptor/pointer_interceptor.dart';
+import 'package:go_router/go_router.dart';
 import 'package:spot_a_camp/core/barrel.dart';
 import 'package:spot_a_camp/features/campsites/barrel.dart';
 
@@ -268,7 +269,10 @@ class _ListWidget extends StatelessWidget {
                     final campsite = campsites[index];
                     return CampsiteListItem(
                       campsite: campsite,
-                      onTap: () => {},
+                      onTap: () => context.push(
+                        '/campsite/${campsite.id}',
+                        extra: campsite,
+                      ),
                     );
                   },
                 );
