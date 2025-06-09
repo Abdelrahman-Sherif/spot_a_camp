@@ -23,5 +23,13 @@
   "euros": "€",
   "en": "English",
   "de": "German",
-  "listSeparator": ", "
+  "listSeparator": ", ",
+  "filters": "Filters",
+  "applyFilters": "Apply",
+  "clearFilters": "Clear Filters",
+  "priceRange": "Price Range",
+  "minPrice": "Min Price",
+  "maxPrice": "Max Price",
+  "closeToWaterDescription": "Only show campsites near water",
+  "campFireAllowedDescription": "Only show campsites that allow campfires"
 }

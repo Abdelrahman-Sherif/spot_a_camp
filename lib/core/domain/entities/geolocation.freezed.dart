@@ -16,7 +16,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$GeoLocation {
 
- double get lat; double get long;
+@JsonKey(fromJson: _divideBy1000) double get lat;@JsonKey(fromJson: _divideBy1000) double get long;
 /// Create a copy of GeoLocation
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -49,7 +49,7 @@ abstract mixin class $GeoLocationCopyWith<$Res>  {
   factory $GeoLocationCopyWith(GeoLocation value, $Res Function(GeoLocation) _then) = _$GeoLocationCopyWithImpl;
 @useResult
 $Res call({
- double lat, double long
+@JsonKey(fromJson: _divideBy1000) double lat,@JsonKey(fromJson: _divideBy1000) double long
 });
 
 
@@ -81,11 +81,11 @@ as double,
 @JsonSerializable()
 
 class _GeoLocation implements GeoLocation {
-  const _GeoLocation({required this.lat, required this.long});
+  const _GeoLocation({@JsonKey(fromJson: _divideBy1000) required this.lat, @JsonKey(fromJson: _divideBy1000) required this.long});
   factory _GeoLocation.fromJson(Map<String, dynamic> json) => _$GeoLocationFromJson(json);
 
-@override final  double lat;
-@override final  double long;
+@override@JsonKey(fromJson: _divideBy1000) final  double lat;
+@override@JsonKey(fromJson: _divideBy1000) final  double long;
 
 /// Create a copy of GeoLocation
 /// with the given fields replaced by the non-null parameter values.
@@ -120,7 +120,7 @@ abstract mixin class _$GeoLocationCopyWith<$Res> implements $GeoLocationCopyWith
   factory _$GeoLocationCopyWith(_GeoLocation value, $Res Function(_GeoLocation) _then) = __$GeoLocationCopyWithImpl;
 @override @useResult
 $Res call({
- double lat, double long
+@JsonKey(fromJson: _divideBy1000) double lat,@JsonKey(fromJson: _divideBy1000) double long
 });
 
 
