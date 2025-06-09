@@ -17,10 +17,17 @@ class _BrowseCampsitesPageState extends ConsumerState<BrowseCampsitesPage> {
   GoogleMapController? _mapController;
   final TextEditingController _searchController = TextEditingController();
 
+  final ClusterManagerId _clusterManagerId = const ClusterManagerId(
+    'campsites',
+  );
+  late ClusterManager _clusterManager;
+  final Map<ClusterManagerId, ClusterManager> _clusterManagers = {};
+
   @override
   void initState() {
     super.initState();
     _searchController.addListener(_onSearchChanged);
+    _initializeClusterManager();
   }
 
   @override
@@ -29,6 +36,26 @@ class _BrowseCampsitesPageState extends ConsumerState<BrowseCampsitesPage> {
     _searchController.dispose();
     _mapController?.dispose();
     super.dispose();
+  }
+
+  void _initializeClusterManager() {
+    _clusterManager = ClusterManager(
+      clusterManagerId: _clusterManagerId,
+      onClusterTap: (argument) {
+        _mapController?.animateCamera(
+          CameraUpdate.newCameraPosition(
+            CameraPosition(
+              target: LatLng(
+                argument.position.latitude,
+                argument.position.longitude,
+              ),
+              zoom: 4.0,
+            ),
+          ),
+        );
+      },
+    );
+    _clusterManagers[_clusterManagerId] = _clusterManager;
   }
 
   void _onSearchChanged() {
@@ -80,6 +107,7 @@ class _BrowseCampsitesPageState extends ConsumerState<BrowseCampsitesPage> {
 
       return Marker(
         markerId: MarkerId(campsite.id),
+        clusterManagerId: _clusterManagerId,
         position: LatLng(lat, lng),
         icon: isSelected
             ? BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueRed)
@@ -113,6 +141,7 @@ class _BrowseCampsitesPageState extends ConsumerState<BrowseCampsitesPage> {
             campsitesAsync: campsitesAsync,
             onMapCreated: _onMapCreated,
             markers: _buildMarkers(campsitesAsync.valueOrNull ?? []),
+            clusterManagers: Set<ClusterManager>.from(_clusterManagers.values),
           ),
 
           DraggableScrollableSheet(

@@ -9,12 +9,14 @@ class CampsitesMap extends ConsumerWidget {
     required this.campsitesAsync,
     required this.onMapCreated,
     required this.markers,
+    required this.clusterManagers,
     super.key,
   });
 
   final AsyncValue<List<Campsite>> campsitesAsync;
   final void Function(GoogleMapController) onMapCreated;
   final Set<Marker> markers;
+  final Set<ClusterManager> clusterManagers;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -29,6 +31,7 @@ class CampsitesMap extends ConsumerWidget {
           zoom: 6.0,
         ),
         markers: markers,
+        clusterManagers: clusterManagers,
         myLocationButtonEnabled: false,
         zoomControlsEnabled: false,
       ),
