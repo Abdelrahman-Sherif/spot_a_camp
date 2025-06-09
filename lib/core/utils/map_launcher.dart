@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'package:flutter/foundation.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class MapLauncher {
@@ -51,25 +52,27 @@ class MapLauncher {
     required double longitude,
     String? label,
   }) async {
-    if (Platform.isIOS) {
-      // Apple Maps navigation
-      final appleNavUrl = Uri.parse(
-        'maps://?daddr=$latitude,$longitude&dirflg=d',
-      );
+    if (!kIsWeb) {
+      if (Platform.isIOS) {
+        // Apple Maps navigation
+        final appleNavUrl = Uri.parse(
+          'maps://?daddr=$latitude,$longitude&dirflg=d',
+        );
 
-      if (await canLaunchUrl(appleNavUrl)) {
-        return await launchUrl(appleNavUrl);
+        if (await canLaunchUrl(appleNavUrl)) {
+          return await launchUrl(appleNavUrl);
+        }
       }
-    }
 
-    if (Platform.isAndroid) {
-      // Google Maps navigation
-      final googleNavUrl = Uri.parse(
-        'google.navigation:q=$latitude,$longitude&mode=d',
-      );
+      if (Platform.isAndroid) {
+        // Google Maps navigation
+        final googleNavUrl = Uri.parse(
+          'google.navigation:q=$latitude,$longitude&mode=d',
+        );
 
-      if (await canLaunchUrl(googleNavUrl)) {
-        return await launchUrl(googleNavUrl);
+        if (await canLaunchUrl(googleNavUrl)) {
+          return await launchUrl(googleNavUrl);
+        }
       }
     }
 
