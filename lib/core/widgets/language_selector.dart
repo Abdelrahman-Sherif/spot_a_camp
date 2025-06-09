@@ -15,7 +15,7 @@ class LanguageSelector extends ConsumerWidget {
       icon: Icon(Icons.language, color: theme.colorScheme.onSurface),
       tooltip: 'Language',
       onSelected: (Locale locale) {
-        ref.read(localeProvider.notifier).state = locale;
+        ref.read(localeProvider.notifier).setLocale(locale);
       },
       itemBuilder: (BuildContext context) => [
         PopupMenuItem<Locale>(

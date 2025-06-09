@@ -1,2 +1,2 @@
-export 'providers/locale_provider.dart';
+export 'providers/barrel.dart';
 export 'widgets/barrel.dart';
