@@ -8,5 +8,20 @@
   "filterAndSearchSubtitle": "Find the perfect spot with advanced filtering options",
   "mapViewTitle": "Map View",
   "mapViewSubtitle": "Explore camping spots on an interactive map",
-  "getStarted": "Start Exploring"
+  "getStarted": "Start Exploring",
+  "browseCampsites": "Browse Campsites",
+  "searchCampsites": "Search campsites...",
+  "filterCampsites": "Filter Campsites",
+  "closeToWater": "Close to Water",
+  "campFireAllowed": "Campfire Allowed",
+  "pricePerNight": "Price per Night",
+  "hostLanguages": "Host Languages",
+  "loading": "Loading...",
+  "error": "Error",
+  "retry": "Retry",
+  "noResults": "No campsites found",
+  "euros": "€",
+  "en": "English",
+  "de": "German",
+  "listSeparator": ", "
 }

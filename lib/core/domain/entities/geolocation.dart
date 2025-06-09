@@ -1,0 +1,13 @@
+import 'package:freezed_annotation/freezed_annotation.dart';
+
+part 'geolocation.freezed.dart';
+part 'geolocation.g.dart';
+
+@freezed
+abstract class GeoLocation with _$GeoLocation {
+  const factory GeoLocation({required double lat, required double long}) =
+      _GeoLocation;
+
+  factory GeoLocation.fromJson(Map<String, dynamic> json) =>
+      _$GeoLocationFromJson(json);
+}
