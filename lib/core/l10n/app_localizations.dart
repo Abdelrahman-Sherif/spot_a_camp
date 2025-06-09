@@ -297,6 +297,66 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Max price must be greater than or equal to min price'**
   String get invalidPriceRange;
+
+  /// No description provided for @campsiteDetails.
+  ///
+  /// In en, this message translates to:
+  /// **'Campsite Details'**
+  String get campsiteDetails;
+
+  /// No description provided for @suitableFor.
+  ///
+  /// In en, this message translates to:
+  /// **'Suitable For'**
+  String get suitableFor;
+
+  /// No description provided for @location.
+  ///
+  /// In en, this message translates to:
+  /// **'Location'**
+  String get location;
+
+  /// No description provided for @bookNow.
+  ///
+  /// In en, this message translates to:
+  /// **'Book Now'**
+  String get bookNow;
+
+  /// No description provided for @contactHost.
+  ///
+  /// In en, this message translates to:
+  /// **'Contact Host'**
+  String get contactHost;
+
+  /// No description provided for @description.
+  ///
+  /// In en, this message translates to:
+  /// **'Description'**
+  String get description;
+
+  /// No description provided for @amenities.
+  ///
+  /// In en, this message translates to:
+  /// **'Amenities'**
+  String get amenities;
+
+  /// No description provided for @createdOn.
+  ///
+  /// In en, this message translates to:
+  /// **'Listed on'**
+  String get createdOn;
+
+  /// No description provided for @shareLocation.
+  ///
+  /// In en, this message translates to:
+  /// **'Share Location'**
+  String get shareLocation;
+
+  /// No description provided for @getDirections.
+  ///
+  /// In en, this message translates to:
+  /// **'Get Directions'**
+  String get getDirections;
 }
 
 class _AppLocalizationsDelegate

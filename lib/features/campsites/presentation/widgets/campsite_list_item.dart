@@ -96,13 +96,7 @@ class CampsiteListItem extends StatelessWidget {
                           FeatureChip(
                             icon: Icons.language,
                             label: campsite.hostLanguages
-                                .map(
-                                  (e) => e == 'en'
-                                      ? l10n.en
-                                      : e == 'de'
-                                      ? l10n.de
-                                      : e,
-                                )
+                                .map((e) => e.label(l10n: l10n))
                                 .join(l10n.listSeparator),
                           ),
                       ],

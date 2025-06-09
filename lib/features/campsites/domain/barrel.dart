@@ -1,2 +1,2 @@
-export 'models/barrel.dart';
+export 'entities/barrel.dart';
 export 'repository/barrel.dart';

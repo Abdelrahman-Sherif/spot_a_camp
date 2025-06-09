@@ -32,5 +32,15 @@
   "maxPrice": "Max Price",
   "closeToWaterDescription": "Only show campsites near water",
   "campFireAllowedDescription": "Only show campsites that allow campfires",
-  "invalidPriceRange": "Max price must be greater than or equal to min price"
+  "invalidPriceRange": "Max price must be greater than or equal to min price",
+  "campsiteDetails": "Campsite Details",
+  "suitableFor": "Suitable For",
+  "location": "Location",
+  "bookNow": "Book Now",
+  "contactHost": "Contact Host",
+  "description": "Description",
+  "amenities": "Amenities",
+  "createdOn": "Listed on",
+  "shareLocation": "Share Location",
+  "getDirections": "Get Directions"
 }

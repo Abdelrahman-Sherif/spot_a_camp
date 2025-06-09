@@ -114,4 +114,34 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get invalidPriceRange =>
       'Max price must be greater than or equal to min price';
+
+  @override
+  String get campsiteDetails => 'Campsite Details';
+
+  @override
+  String get suitableFor => 'Suitable For';
+
+  @override
+  String get location => 'Location';
+
+  @override
+  String get bookNow => 'Book Now';
+
+  @override
+  String get contactHost => 'Contact Host';
+
+  @override
+  String get description => 'Description';
+
+  @override
+  String get amenities => 'Amenities';
+
+  @override
+  String get createdOn => 'Listed on';
+
+  @override
+  String get shareLocation => 'Share Location';
+
+  @override
+  String get getDirections => 'Get Directions';
 }
