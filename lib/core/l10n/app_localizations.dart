@@ -153,6 +153,96 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Start Exploring'**
   String get getStarted;
+
+  /// No description provided for @browseCampsites.
+  ///
+  /// In en, this message translates to:
+  /// **'Browse Campsites'**
+  String get browseCampsites;
+
+  /// No description provided for @searchCampsites.
+  ///
+  /// In en, this message translates to:
+  /// **'Search campsites...'**
+  String get searchCampsites;
+
+  /// No description provided for @filterCampsites.
+  ///
+  /// In en, this message translates to:
+  /// **'Filter Campsites'**
+  String get filterCampsites;
+
+  /// No description provided for @closeToWater.
+  ///
+  /// In en, this message translates to:
+  /// **'Close to Water'**
+  String get closeToWater;
+
+  /// No description provided for @campFireAllowed.
+  ///
+  /// In en, this message translates to:
+  /// **'Campfire Allowed'**
+  String get campFireAllowed;
+
+  /// No description provided for @pricePerNight.
+  ///
+  /// In en, this message translates to:
+  /// **'Price per Night'**
+  String get pricePerNight;
+
+  /// No description provided for @hostLanguages.
+  ///
+  /// In en, this message translates to:
+  /// **'Host Languages'**
+  String get hostLanguages;
+
+  /// No description provided for @loading.
+  ///
+  /// In en, this message translates to:
+  /// **'Loading...'**
+  String get loading;
+
+  /// No description provided for @error.
+  ///
+  /// In en, this message translates to:
+  /// **'Error'**
+  String get error;
+
+  /// No description provided for @retry.
+  ///
+  /// In en, this message translates to:
+  /// **'Retry'**
+  String get retry;
+
+  /// No description provided for @noResults.
+  ///
+  /// In en, this message translates to:
+  /// **'No campsites found'**
+  String get noResults;
+
+  /// No description provided for @euros.
+  ///
+  /// In en, this message translates to:
+  /// **'€'**
+  String get euros;
+
+  /// No description provided for @en.
+  ///
+  /// In en, this message translates to:
+  /// **'English'**
+  String get en;
+
+  /// No description provided for @de.
+  ///
+  /// In en, this message translates to:
+  /// **'German'**
+  String get de;
+
+  /// No description provided for @listSeparator.
+  ///
+  /// In en, this message translates to:
+  /// **', '**
+  String get listSeparator;
 }
 
 class _AppLocalizationsDelegate

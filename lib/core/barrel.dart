@@ -1,5 +1,7 @@
+export 'domain/barrel.dart';
 export 'extensions/barrel.dart';
 export 'l10n/barrel.dart';
+export 'presentation/barrel.dart';
 export 'router.dart';
 export 'theme/barrel.dart';
 export 'utils/barrel.dart';

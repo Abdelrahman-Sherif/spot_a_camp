@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:spot_a_camp/core/barrel.dart';
 import 'package:spot_a_camp/features/welcome/barrel.dart';
 import 'package:spot_a_camp/gen/assets.gen.dart';
@@ -39,7 +40,7 @@ class WelcomePage extends StatelessWidget {
                       ),
                       textAlign: TextAlign.center,
                     ),
-                    const SizedBox(height: Spacing.xl),
+                    const SizedBox(height: Spacing.l),
 
                     // Features
                     FeatureItem(
@@ -68,7 +69,10 @@ class WelcomePage extends StatelessWidget {
               ),
 
               // Get Started Button
-              CustomButton(text: l10n.getStarted, onPressed: () {}),
+              CustomButton(
+                text: l10n.getStarted,
+                onPressed: () => context.go('/browse'),
+              ),
               const SizedBox(height: Spacing.m),
             ],
           ),

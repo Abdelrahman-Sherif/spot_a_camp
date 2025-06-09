@@ -40,4 +40,49 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get getStarted => 'Start Exploring';
+
+  @override
+  String get browseCampsites => 'Browse Campsites';
+
+  @override
+  String get searchCampsites => 'Search campsites...';
+
+  @override
+  String get filterCampsites => 'Filter Campsites';
+
+  @override
+  String get closeToWater => 'Close to Water';
+
+  @override
+  String get campFireAllowed => 'Campfire Allowed';
+
+  @override
+  String get pricePerNight => 'Price per Night';
+
+  @override
+  String get hostLanguages => 'Host Languages';
+
+  @override
+  String get loading => 'Loading...';
+
+  @override
+  String get error => 'Error';
+
+  @override
+  String get retry => 'Retry';
+
+  @override
+  String get noResults => 'No campsites found';
+
+  @override
+  String get euros => '€';
+
+  @override
+  String get en => 'English';
+
+  @override
+  String get de => 'German';
+
+  @override
+  String get listSeparator => ', ';
 }

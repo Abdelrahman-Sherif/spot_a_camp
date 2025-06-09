@@ -6,13 +6,12 @@ class Spacing {
 
   static const double xxs = 2;
   static const double xs = 4;
-  static const double small1 = 5;
-  static const double small2 = 10;
+  static const double small1 = 8;
+  static const double small2 = 12;
   static const double small3 = 16;
-  static const double small4 = 20;
+  static const double small4 = 24;
   static const double m = 32;
-  static const double l = 40;
-  static const double xl = 50;
+  static const double l = 48;
 
   static const double pagePadding = small3;
 }
@@ -24,7 +23,6 @@ class SpacingValues {
   static final small4 = SpacingValue(Spacing.small4);
   static final m = SpacingValue(Spacing.m);
   static final l = SpacingValue(Spacing.l);
-  static final xl = SpacingValue(Spacing.xl);
 
   static final pagePadding = SpacingValue(Spacing.pagePadding);
 }
