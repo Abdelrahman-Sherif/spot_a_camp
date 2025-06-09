@@ -133,7 +133,7 @@ class _BrowseCampsitesPageState extends ConsumerState<BrowseCampsitesPage> {
         title: Text(l10n.browseCampsites),
         backgroundColor: theme.colorScheme.surface,
         elevation: 0,
-        actions: [CampsitesFilterButton()],
+        actions: [const LanguageSelector(), CampsitesFilterButton()],
       ),
       body: Stack(
         children: [
