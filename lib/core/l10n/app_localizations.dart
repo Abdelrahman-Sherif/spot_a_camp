@@ -243,6 +243,60 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **', '**
   String get listSeparator;
+
+  /// No description provided for @filters.
+  ///
+  /// In en, this message translates to:
+  /// **'Filters'**
+  String get filters;
+
+  /// No description provided for @applyFilters.
+  ///
+  /// In en, this message translates to:
+  /// **'Apply'**
+  String get applyFilters;
+
+  /// No description provided for @clearFilters.
+  ///
+  /// In en, this message translates to:
+  /// **'Clear Filters'**
+  String get clearFilters;
+
+  /// No description provided for @priceRange.
+  ///
+  /// In en, this message translates to:
+  /// **'Price Range'**
+  String get priceRange;
+
+  /// No description provided for @minPrice.
+  ///
+  /// In en, this message translates to:
+  /// **'Min Price'**
+  String get minPrice;
+
+  /// No description provided for @maxPrice.
+  ///
+  /// In en, this message translates to:
+  /// **'Max Price'**
+  String get maxPrice;
+
+  /// No description provided for @closeToWaterDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Only show campsites near water'**
+  String get closeToWaterDescription;
+
+  /// No description provided for @campFireAllowedDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Only show campsites that allow campfires'**
+  String get campFireAllowedDescription;
+
+  /// No description provided for @invalidPriceRange.
+  ///
+  /// In en, this message translates to:
+  /// **'Max price must be greater than or equal to min price'**
+  String get invalidPriceRange;
 }
 
 class _AppLocalizationsDelegate

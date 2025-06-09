@@ -85,4 +85,33 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get listSeparator => ', ';
+
+  @override
+  String get filters => 'Filters';
+
+  @override
+  String get applyFilters => 'Apply';
+
+  @override
+  String get clearFilters => 'Clear Filters';
+
+  @override
+  String get priceRange => 'Price Range';
+
+  @override
+  String get minPrice => 'Min Price';
+
+  @override
+  String get maxPrice => 'Max Price';
+
+  @override
+  String get closeToWaterDescription => 'Only show campsites near water';
+
+  @override
+  String get campFireAllowedDescription =>
+      'Only show campsites that allow campfires';
+
+  @override
+  String get invalidPriceRange =>
+      'Max price must be greater than or equal to min price';
 }

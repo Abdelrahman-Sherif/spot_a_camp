@@ -16,14 +16,21 @@ final campsiteListProvider = FutureProvider<List<Campsite>>((ref) async {
 
 final searchQueryProvider = StateProvider<String>((ref) => '');
 
+final filterNotifierProvider =
+    StateNotifierProvider<CampsiteFilterNotifier, CampsiteFilters>((ref) {
+      return CampsiteFilterNotifier();
+    });
+
 final filteredCampsitesProvider = Provider<AsyncValue<List<Campsite>>>((ref) {
   final campsitesAsync = ref.watch(campsiteListProvider);
   final searchQuery = ref.watch(searchQueryProvider);
+  final filters = ref.watch(filterNotifierProvider);
 
   return campsitesAsync.when(
     data: (campsites) {
       var filtered = campsites;
 
+      // Apply search filter
       if (searchQuery.isNotEmpty) {
         filtered = filtered
             .where(
@@ -31,6 +38,13 @@ final filteredCampsitesProvider = Provider<AsyncValue<List<Campsite>>>((ref) {
                 searchQuery.toLowerCase(),
               ),
             )
+            .toList();
+      }
+
+      // Apply filters
+      if (filters.hasActiveFilters) {
+        filtered = filtered
+            .where((campsite) => filters.matchesCampsite(campsite))
             .toList();
       }
 
@@ -45,3 +59,4 @@ final filteredCampsitesProvider = Provider<AsyncValue<List<Campsite>>>((ref) {
 });
 
 final selectedCampsiteProvider = StateProvider<Campsite?>((ref) => null);
+

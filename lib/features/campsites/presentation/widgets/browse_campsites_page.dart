@@ -105,6 +105,7 @@ class _BrowseCampsitesPageState extends ConsumerState<BrowseCampsitesPage> {
         title: Text(l10n.browseCampsites),
         backgroundColor: theme.colorScheme.surface,
         elevation: 0,
+        actions: [_FilterButton()],
       ),
       body: Stack(
         children: [
@@ -295,6 +296,43 @@ class _ListWidget extends StatelessWidget {
               ),
             ),
           ),
+        ],
+      ),
+    );
+  }
+}
+
+class _FilterButton extends ConsumerWidget {
+  const _FilterButton();
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final theme = Theme.of(context);
+    final filters = ref.watch(filterNotifierProvider);
+
+    return IconButton(
+      onPressed: () {
+        showDialog(
+          context: context,
+          builder: (context) => const CampsiteFiltersPopup(),
+        );
+      },
+      icon: Stack(
+        children: [
+          const Icon(Icons.tune),
+          if (filters.hasActiveFilters)
+            Positioned(
+              right: 0,
+              top: 0,
+              child: Container(
+                width: 8,
+                height: 8,
+                decoration: BoxDecoration(
+                  color: theme.colorScheme.primary,
+                  shape: BoxShape.circle,
+                ),
+              ),
+            ),
         ],
       ),
     );
