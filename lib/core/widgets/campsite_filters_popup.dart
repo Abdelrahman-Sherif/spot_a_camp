@@ -21,6 +21,7 @@ class _CampsiteFiltersPopupState extends ConsumerState<CampsiteFiltersPopup> {
 
   final TextEditingController _minPriceController = TextEditingController();
   final TextEditingController _maxPriceController = TextEditingController();
+  bool _showValidationError = false;
 
   @override
   void initState() {
@@ -41,15 +42,36 @@ class _CampsiteFiltersPopupState extends ConsumerState<CampsiteFiltersPopup> {
   void _updateMinPrice(String value) {
     final price = double.tryParse(value);
     ref.read(_tempFilterProvider.notifier).updateMinPrice(price);
+    // Clear validation error when user starts typing
+    if (_showValidationError) {
+      setState(() {
+        _showValidationError = false;
+      });
+    }
   }
 
   void _updateMaxPrice(String value) {
     final price = double.tryParse(value);
     ref.read(_tempFilterProvider.notifier).updateMaxPrice(price);
+    // Clear validation error when user starts typing
+    if (_showValidationError) {
+      setState(() {
+        _showValidationError = false;
+      });
+    }
   }
 
   void _applyFilters() {
     final tempFilters = ref.read(_tempFilterProvider);
+
+    // Check if price range is valid before applying
+    if (!tempFilters.hasValidPriceRange) {
+      setState(() {
+        _showValidationError = true;
+      });
+      return;
+    }
+
     ref.read(filterNotifierProvider.notifier).applyFilters(tempFilters);
     Navigator.of(context).pop();
   }
@@ -58,6 +80,9 @@ class _CampsiteFiltersPopupState extends ConsumerState<CampsiteFiltersPopup> {
     ref.read(_tempFilterProvider.notifier).clear();
     _minPriceController.clear();
     _maxPriceController.clear();
+    setState(() {
+      _showValidationError = false;
+    });
   }
 
   @override
@@ -132,37 +157,51 @@ class _CampsiteFiltersPopupState extends ConsumerState<CampsiteFiltersPopup> {
             // Price Range
             Text(l10n.priceRange, style: theme.textTheme.titleMedium),
             const SizedBox(height: Spacing.small3),
-            Row(
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Expanded(
-                  child: TextField(
-                    controller: _minPriceController,
-                    decoration: InputDecoration(
-                      labelText: l10n.minPrice,
-                      prefixText: '€',
-                      border: OutlineInputBorder(
-                        borderRadius: CustomBorderRadius.medium,
+                Row(
+                  children: [
+                    Expanded(
+                      child: TextField(
+                        controller: _minPriceController,
+                        decoration: InputDecoration(
+                          labelText: l10n.minPrice,
+                          prefixText: '€',
+                          border: OutlineInputBorder(
+                            borderRadius: CustomBorderRadius.medium,
+                          ),
+                        ),
+                        keyboardType: TextInputType.number,
+                        onChanged: _updateMinPrice,
                       ),
                     ),
-                    keyboardType: TextInputType.number,
-                    onChanged: _updateMinPrice,
-                  ),
-                ),
-                const SizedBox(width: Spacing.small3),
-                Expanded(
-                  child: TextField(
-                    controller: _maxPriceController,
-                    decoration: InputDecoration(
-                      labelText: l10n.maxPrice,
-                      prefixText: '€',
-                      border: OutlineInputBorder(
-                        borderRadius: CustomBorderRadius.medium,
+                    const SizedBox(width: Spacing.small3),
+                    Expanded(
+                      child: TextField(
+                        controller: _maxPriceController,
+                        decoration: InputDecoration(
+                          labelText: l10n.maxPrice,
+                          prefixText: '€',
+                          border: OutlineInputBorder(
+                            borderRadius: CustomBorderRadius.medium,
+                          ),
+                        ),
+                        keyboardType: TextInputType.number,
+                        onChanged: _updateMaxPrice,
                       ),
                     ),
-                    keyboardType: TextInputType.number,
-                    onChanged: _updateMaxPrice,
-                  ),
+                  ],
                 ),
+                if (_showValidationError) ...[
+                  const SizedBox(height: Spacing.xs),
+                  Text(
+                    l10n.invalidPriceRange,
+                    style: theme.textTheme.bodySmall?.copyWith(
+                      color: theme.colorScheme.error,
+                    ),
+                  ),
+                ],
               ],
             ),
 

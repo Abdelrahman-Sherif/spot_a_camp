@@ -291,6 +291,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Only show campsites that allow campfires'**
   String get campFireAllowedDescription;
+
+  /// No description provided for @invalidPriceRange.
+  ///
+  /// In en, this message translates to:
+  /// **'Max price must be greater than or equal to min price'**
+  String get invalidPriceRange;
 }
 
 class _AppLocalizationsDelegate

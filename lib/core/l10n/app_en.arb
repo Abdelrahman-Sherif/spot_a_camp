@@ -31,5 +31,6 @@
   "minPrice": "Min Price",
   "maxPrice": "Max Price",
   "closeToWaterDescription": "Only show campsites near water",
-  "campFireAllowedDescription": "Only show campsites that allow campfires"
+  "campFireAllowedDescription": "Only show campsites that allow campfires",
+  "invalidPriceRange": "Max price must be greater than or equal to min price"
 }

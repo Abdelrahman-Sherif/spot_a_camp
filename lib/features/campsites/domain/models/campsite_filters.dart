@@ -20,6 +20,12 @@ abstract class CampsiteFilters with _$CampsiteFilters {
       minPrice != null ||
       maxPrice != null;
 
+  bool get hasValidPriceRange {
+    if (minPrice == null && maxPrice == null) return true;
+    if (minPrice == null || maxPrice == null) return true;
+    return maxPrice! >= minPrice!;
+  }
+
   bool matchesCampsite(Campsite campsite) {
     if (closeToWaterOnly && !campsite.isCloseToWater) {
       return false;
@@ -29,12 +35,15 @@ abstract class CampsiteFilters with _$CampsiteFilters {
       return false;
     }
 
-    if (minPrice != null && campsite.pricePerNight < minPrice!) {
-      return false;
-    }
+    // Only apply price filters if the price range is valid
+    if (hasValidPriceRange) {
+      if (minPrice != null && campsite.pricePerNight < minPrice!) {
+        return false;
+      }
 
-    if (maxPrice != null && campsite.pricePerNight > maxPrice!) {
-      return false;
+      if (maxPrice != null && campsite.pricePerNight > maxPrice!) {
+        return false;
+      }
     }
 
     return true;

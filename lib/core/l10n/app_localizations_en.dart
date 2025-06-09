@@ -110,4 +110,8 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get campFireAllowedDescription =>
       'Only show campsites that allow campfires';
+
+  @override
+  String get invalidPriceRange =>
+      'Max price must be greater than or equal to min price';
 }
