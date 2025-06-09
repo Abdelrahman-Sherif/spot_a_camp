@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:pointer_interceptor/pointer_interceptor.dart';
 import 'package:spot_a_camp/features/campsites/barrel.dart';
 
 class CampsitesFilterButton extends ConsumerWidget {
@@ -14,7 +15,8 @@ class CampsitesFilterButton extends ConsumerWidget {
       onPressed: () {
         showDialog(
           context: context,
-          builder: (context) => const CampsiteFiltersPopup(),
+          builder: (context) =>
+              PointerInterceptor(child: const CampsiteFiltersPopup()),
         );
       },
       icon: Stack(
