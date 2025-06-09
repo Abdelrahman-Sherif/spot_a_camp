@@ -34,12 +34,13 @@ class _FeaturesSection extends StatelessWidget {
             if (campsite.hostLanguages.isNotEmpty)
               FeatureChip(
                 icon: Icons.language,
-                label:
-                    '${l10n.hostLanguages}: ${campsite.hostLanguages.map((e) => e == 'en'
-                        ? l10n.en
-                        : e == 'de'
-                        ? l10n.de
-                        : e).join(l10n.listSeparator)}',
+                label: () {
+                  final languages = campsite.hostLanguages
+                      .map((e) => e.label(l10n: l10n))
+                      .join(l10n.listSeparator);
+
+                  return '${l10n.hostLanguages}: $languages';
+                }(),
               ),
           ],
         ),

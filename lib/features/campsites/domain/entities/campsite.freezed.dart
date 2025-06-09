@@ -16,7 +16,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$Campsite {
 
- String get id; String get label; String get photo; GeoLocation get geoLocation; bool get isCloseToWater; bool get isCampFireAllowed; List<String> get hostLanguages; double get pricePerNight; List<String> get suitableFor; DateTime get createdAt;
+ String get id; String get label; String get photo; GeoLocation get geoLocation; bool get isCloseToWater; bool get isCampFireAllowed;@JsonKey(fromJson: _campsiteLanguageFromJson, toJson: _campsiteLanguageToJson) List<CampsiteLanguage> get hostLanguages; double get pricePerNight; List<String> get suitableFor; DateTime get createdAt;
 /// Create a copy of Campsite
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -49,7 +49,7 @@ abstract mixin class $CampsiteCopyWith<$Res>  {
   factory $CampsiteCopyWith(Campsite value, $Res Function(Campsite) _then) = _$CampsiteCopyWithImpl;
 @useResult
 $Res call({
- String id, String label, String photo, GeoLocation geoLocation, bool isCloseToWater, bool isCampFireAllowed, List<String> hostLanguages, double pricePerNight, List<String> suitableFor, DateTime createdAt
+ String id, String label, String photo, GeoLocation geoLocation, bool isCloseToWater, bool isCampFireAllowed,@JsonKey(fromJson: _campsiteLanguageFromJson, toJson: _campsiteLanguageToJson) List<CampsiteLanguage> hostLanguages, double pricePerNight, List<String> suitableFor, DateTime createdAt
 });
 
 
@@ -75,7 +75,7 @@ as String,geoLocation: null == geoLocation ? _self.geoLocation : geoLocation // 
 as GeoLocation,isCloseToWater: null == isCloseToWater ? _self.isCloseToWater : isCloseToWater // ignore: cast_nullable_to_non_nullable
 as bool,isCampFireAllowed: null == isCampFireAllowed ? _self.isCampFireAllowed : isCampFireAllowed // ignore: cast_nullable_to_non_nullable
 as bool,hostLanguages: null == hostLanguages ? _self.hostLanguages : hostLanguages // ignore: cast_nullable_to_non_nullable
-as List<String>,pricePerNight: null == pricePerNight ? _self.pricePerNight : pricePerNight // ignore: cast_nullable_to_non_nullable
+as List<CampsiteLanguage>,pricePerNight: null == pricePerNight ? _self.pricePerNight : pricePerNight // ignore: cast_nullable_to_non_nullable
 as double,suitableFor: null == suitableFor ? _self.suitableFor : suitableFor // ignore: cast_nullable_to_non_nullable
 as List<String>,createdAt: null == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
 as DateTime,
@@ -98,7 +98,7 @@ $GeoLocationCopyWith<$Res> get geoLocation {
 @JsonSerializable()
 
 class _Campsite implements Campsite {
-  const _Campsite({required this.id, required this.label, required this.photo, required this.geoLocation, required this.isCloseToWater, required this.isCampFireAllowed, required final  List<String> hostLanguages, required this.pricePerNight, required final  List<String> suitableFor, required this.createdAt}): _hostLanguages = hostLanguages,_suitableFor = suitableFor;
+  const _Campsite({required this.id, required this.label, required this.photo, required this.geoLocation, required this.isCloseToWater, required this.isCampFireAllowed, @JsonKey(fromJson: _campsiteLanguageFromJson, toJson: _campsiteLanguageToJson) required final  List<CampsiteLanguage> hostLanguages, required this.pricePerNight, required final  List<String> suitableFor, required this.createdAt}): _hostLanguages = hostLanguages,_suitableFor = suitableFor;
   factory _Campsite.fromJson(Map<String, dynamic> json) => _$CampsiteFromJson(json);
 
 @override final  String id;
@@ -107,8 +107,8 @@ class _Campsite implements Campsite {
 @override final  GeoLocation geoLocation;
 @override final  bool isCloseToWater;
 @override final  bool isCampFireAllowed;
- final  List<String> _hostLanguages;
-@override List<String> get hostLanguages {
+ final  List<CampsiteLanguage> _hostLanguages;
+@override@JsonKey(fromJson: _campsiteLanguageFromJson, toJson: _campsiteLanguageToJson) List<CampsiteLanguage> get hostLanguages {
   if (_hostLanguages is EqualUnmodifiableListView) return _hostLanguages;
   // ignore: implicit_dynamic_type
   return EqualUnmodifiableListView(_hostLanguages);
@@ -157,7 +157,7 @@ abstract mixin class _$CampsiteCopyWith<$Res> implements $CampsiteCopyWith<$Res>
   factory _$CampsiteCopyWith(_Campsite value, $Res Function(_Campsite) _then) = __$CampsiteCopyWithImpl;
 @override @useResult
 $Res call({
- String id, String label, String photo, GeoLocation geoLocation, bool isCloseToWater, bool isCampFireAllowed, List<String> hostLanguages, double pricePerNight, List<String> suitableFor, DateTime createdAt
+ String id, String label, String photo, GeoLocation geoLocation, bool isCloseToWater, bool isCampFireAllowed,@JsonKey(fromJson: _campsiteLanguageFromJson, toJson: _campsiteLanguageToJson) List<CampsiteLanguage> hostLanguages, double pricePerNight, List<String> suitableFor, DateTime createdAt
 });
 
 
@@ -183,7 +183,7 @@ as String,geoLocation: null == geoLocation ? _self.geoLocation : geoLocation // 
 as GeoLocation,isCloseToWater: null == isCloseToWater ? _self.isCloseToWater : isCloseToWater // ignore: cast_nullable_to_non_nullable
 as bool,isCampFireAllowed: null == isCampFireAllowed ? _self.isCampFireAllowed : isCampFireAllowed // ignore: cast_nullable_to_non_nullable
 as bool,hostLanguages: null == hostLanguages ? _self._hostLanguages : hostLanguages // ignore: cast_nullable_to_non_nullable
-as List<String>,pricePerNight: null == pricePerNight ? _self.pricePerNight : pricePerNight // ignore: cast_nullable_to_non_nullable
+as List<CampsiteLanguage>,pricePerNight: null == pricePerNight ? _self.pricePerNight : pricePerNight // ignore: cast_nullable_to_non_nullable
 as double,suitableFor: null == suitableFor ? _self._suitableFor : suitableFor // ignore: cast_nullable_to_non_nullable
 as List<String>,createdAt: null == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
 as DateTime,
