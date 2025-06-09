@@ -60,8 +60,12 @@ class _CampsiteFiltersPopupState extends ConsumerState<CampsiteFiltersPopup> {
 
   void _clearFilters() {
     ref.read(_tempFilterProvider.notifier).clear();
+    ref.read(filterNotifierProvider.notifier).clearFilters();
+
     _minPriceController.clear();
     _maxPriceController.clear();
+
+    Navigator.of(context).pop();
   }
 
   @override

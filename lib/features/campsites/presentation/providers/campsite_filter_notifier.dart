@@ -15,26 +15,6 @@ abstract class TempFilterState with _$TempFilterState {
 class CampsiteFilterNotifier extends StateNotifier<CampsiteFilters> {
   CampsiteFilterNotifier() : super(const CampsiteFilters());
 
-  void updateCloseToWater(bool value) {
-    state = state.copyWith(closeToWaterOnly: value);
-  }
-
-  void updateCampFireAllowed(bool value) {
-    state = state.copyWith(campFireAllowedOnly: value);
-  }
-
-  void updateMinPrice(double? price) {
-    state = state.copyWith(minPrice: price);
-  }
-
-  void updateMaxPrice(double? price) {
-    state = state.copyWith(maxPrice: price);
-  }
-
-  void updatePriceRange({double? minPrice, double? maxPrice}) {
-    state = state.copyWith(minPrice: minPrice, maxPrice: maxPrice);
-  }
-
   void clearFilters() {
     state = const CampsiteFilters();
   }
